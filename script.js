@@ -1,25 +1,23 @@
-var fish = document.getElementById("fish");
-var net = document.getElementById("net");
-var counter = 0;
-
+var character = document.getElementById("character");
+var block = document.getElementById("block");
+var counter=0;
 function jump(){
-    if(fish.classList.contains("animate")){ return }
-    fish.classList.add("animate");
+    if(character.classList == "animate"){return}
+    character.classList.add("animate");
     setTimeout(function(){
-        fish.classList.remove("animate");
-    }, 300);
+        character.classList.remove("animate");
+    },300);
 }
-
 var checkDead = setInterval(function() {
-    let fishTop = parseInt(window.getComputedStyle(fish).getPropertyValue("top"));
-    let netLeft = parseInt(window.getComputedStyle(net).getPropertyValue("left"));
-    if(netLeft < 20 && netLeft > -20 && fishTop >= 130){
-        net.style.animation = "none";
-        alert("Game Over. Score: " + Math.floor(counter / 100));
-        counter = 0;
-        net.style.animation = "net 1s infinite linear";
-    } else {
+    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    if(blockLeft<20 && blockLeft>-20 && characterTop>=130){
+        block.style.animation = "none";
+        alert("Game Over. score: "+Math.floor(counter/100));
+        counter=0;
+        block.style.animation = "block 1s infinite linear";
+    }else{
         counter++;
-        document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
+        document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
     }
 }, 10);
