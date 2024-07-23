@@ -1,45 +1,46 @@
-*{
+* {
     padding: 1;
     margin: 1;
     overflow-x: hidden;
 }
-.game{
+.game {
     width: 550px;
     height: 500px;
     border: 3px solid rgb(224, 154, 16);
     margin: auto;
     background-image: url("mastbg.gif");
 }
-#character{
+#fish {
     width: 50px;
     height: 80px;
-    background-color: rgb(182, 216, 30);
-    position:relative;
+    position: relative;
     top: 200px;
+    background-image: url("fish.png");
+    background-size: cover;
 }
-.animate{
+.animate {
     animation: jump 0.3s linear;
 }
-@keyframes jump{
-    0%{top: 150px;}
-    30%{top: 100px;}
-    70%{top: 100px;}
-    100%{top: 150px;}
+@keyframes jump {
+    0% { top: 150px; }
+    30% { top: 100px; }
+    70% { top: 100px; }
+    100% { top: 150px; }
 }
-
-#block{
-    background-color: rgb(231, 19, 154);
+#net {
     width: 50px;
     height: 50px;
     position: relative;
     top: 150px;
     left: 600px;
-    animation: block 1s infinite linear;
+    background-image: url("net.png");
+    background-size: cover;
+    animation: net 1s infinite linear;
 }
-@keyframes block{
-    0%{left: 500px}
-    100%{left: -20px}
+@keyframes net {
+    0% { left: 500px; }
+    100% { left: -20px; }
 }
-p{
+p {
     text-align: center;
 }
